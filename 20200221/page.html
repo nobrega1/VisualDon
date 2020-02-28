@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @keyframes nose { /*La règle @keyframes permet aux auteurs de définir les étapes qui composent la séquence d'une animation CSS.*/
+            from {
+                font-size: 20px;
+                animation-timing-function: linear;
+            }
+
+            to {
+                font-size: 40px;
+                animation-timing-function: linear;
+            }
+        }
+
+        @keyframes right_eye {
+            from {
+                transform:rotate(0deg);
+                transform-origin: 183px 120px;
+                animation-timing-function: linear;
+            }
+            to {
+                transform:rotate(360deg);
+                transform-origin: 183px 120px;
+                animation-timing-function: linear;
+            }
+        }
+
+        @keyframes left_eye {
+            from {
+                transform:rotate(0deg);
+                transform-origin: 112px 120px;
+                animation-timing-function: linear;
+            }
+            to {
+                transform:rotate(360deg);
+                transform-origin: 112px 120px;
+                animation-timing-function: linear;
+            }
+        }        
+
+        .skin:hover, .skin:hover ~ .eyebrows {
+            fill: red;
+        }
+
+        .skin:hover ~ .nose {
+            animation: nose 1s infinite alternate;
+        }
+
+        .nose {
+            animation-duration: 1s;
+            animation-name: nose;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation: none;
+        }
+
+        .left_eye {
+            animation-duration: 1s;
+            animation-name: left_eye;
+            animation-iteration-count: infinite;
+        }
+        .right_eye {
+            animation-duration: 1s;
+            animation-name: right_eye;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <circle class="skin" cx="150" cy="150" r="100"  fill="yellow" />
+        <circle class="left_eye" cx="110" cy="120" r="15" fill="black" />
+        <circle class="right_eye" cx="185" cy="120" r="15" fill="black" />
+        <text class="nose" x="133" y="170" font-size="20">👃</text>
+        <path d="M 100 180 C 150 220 190 200 190 200" fill="none" stroke="black" stroke-width="10" />
+        <rect class="eyebrows" x="136" y="145" width="30" height="10" fill="yellow" transform="rotate(-15)"/>
+        <rect class="eyebrows" x="124" y="70" width="30" height="10" fill="yellow" transform="rotate(15)"/>
+        <ellipse cx="105" cy="110" rx="70" ry="30" transform="rotate(-15)"/>
+    </svg>
+    
+</body>
+</html>
