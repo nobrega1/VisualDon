@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Exercice canvas</title>
+  </head>
+  <body>
+    <canvas id="dessin" width="1000" height="500"></canvas>
+    <script>
+
+const canvas = document.getElementById('dessin')
+const ctx = canvas.getContext('2d')
+
+ctx.fillStyle = "rgb(200,0,0)";
+ ctx.fillRect (10, 10, 55, 50);
+
+ ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+ ctx.fillRect (30, 30, 55, 50);
+
+    </script>
+  </body>
+</html>
